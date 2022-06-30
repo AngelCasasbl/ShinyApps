@@ -38,9 +38,22 @@ shinyUI(fluidPage(
                            format = "dd/mm/yyyy",
                            language = "es",
                            weekstart = 1, 
-                           separator = "a")
-                        
-        ),
+                           separator = "a"),
+            checkboxInput("single_checkbox_input","Desea recibir informacion: ",
+                          value = F),
+            checkboxGroupInput("Multiple_checkbox_input","Seleccione un tipo: ",
+                               choices = c("Carro","Camioneta","Moto","Tractor"),
+                               selected = NULL),
+            radioButtons("radio_input","seleccione uno: ",
+                         choices = c("primaria","secundaria","universidad"),
+                         selected = 0),
+            actionButton("btn_ok","Ejecutar"),
+            # br() : Funcion para hacer un linebreak
+            actionButton("btn_salir","Salir"),
+            br(),
+            actionLink("link_up","Siguente"),
+            submitButton("Ejecutar")
+        ), 
 
         # gráfico principal
         mainPanel(
@@ -55,8 +68,17 @@ shinyUI(fluidPage(
             ("Salida con date"),
             verbatimTextOutput("date"),
             ("Salida con date_range"),
-            verbatimTextOutput("date_range")
-            
+            verbatimTextOutput("date_range"),
+            ("Salida con checkbox"),
+            verbatimTextOutput("single_checkbox"),
+            ("Salida con multiple checkbox"),
+            verbatimTextOutput("multiple_checkbox"),
+            ("Salida con radio buttons"),
+            verbatimTextOutput("RadioIO"),
+            ("Salida con action buttons"),
+            verbatimTextOutput("btn_oki"),
+            ("Salida con action buttons salir"),
+            verbatimTextOutput("btn_salida")
         )
     )
 ))

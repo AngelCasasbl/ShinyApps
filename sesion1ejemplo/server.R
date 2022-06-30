@@ -24,4 +24,24 @@ shinyServer(function(input, output) {
         print(input$date_range_input)
         str(input$date_range_input)
     })
+    output$single_checkbox <- renderPrint({
+      print(input$single_checkbox_input)
+      str(input$single_checkbox_input)
+    })
+    output$multiple_checkbox <- renderPrint({
+      print(input$Multiple_checkbox_input)
+      str(input$Multiple_checkbox_input)
+    })
+    output$RadioIO <- renderPrint({
+      print(input$radio_input)
+      str(input$radio_input)
+    }) 
+    output$btn_oki <- renderPrint({
+      print(input$btn_ok)
+      str(input$btn_ok)
+    }) 
+    output$btn_salida <- renderPrint({
+      print(input$btn_salir)
+      str(input$btn_salir)
+    }) 
 })
