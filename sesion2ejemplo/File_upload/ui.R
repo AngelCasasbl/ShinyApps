@@ -1,4 +1,5 @@
 library(shiny)
+library(DT)
 
 shinyUI(fluidPage(
 
@@ -7,7 +8,8 @@ shinyUI(fluidPage(
 
      sidebarLayout(
         sidebarPanel(
-            fileInput("file_upload", "Cargar un archivo")
+            fileInput("file_upload", "Cargar un archivo",
+                    accept = ".csv")
         ),
 
  

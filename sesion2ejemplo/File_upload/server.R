@@ -13,7 +13,7 @@ shinyServer(function(input, output) {
     })
 
     
-    output$contenido_archivo <- DT::renderTable({
+    output$contenido_archivo <- DT::renderDataTable({
         
         DT::datatable(archivo_cargado())
     })
